@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages I Sent You</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 16px;
+            margin: 10px 0 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 صور في كل صف */
+            gap: 20px;
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #333;
+            grid-column: span 4;
+        }
+
+        .message-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: white;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <h1>Messages I Sent You</h1>
+        <p>These are messages I sent you, and I want to keep them here so you can always remember them.</p>
+    </header>
+
+    <!-- المحتوى -->
+    <div class="container">
+        <h2>My Sent Messages</h2>
+
+        <!-- صور الرسائل -->
+        <img src="message1.jpg" alt="Message 1" class="message-img" onclick="openPopup(this.src)">
+        <img src="message2.jpg" alt="Message 2" class="message-img" onclick="openPopup(this.src)">
+        <img src="message3.jpg" alt="Message 3" class="message-img" onclick="openPopup(this.src)">
+        <img src="message4.jpg" alt="Message 4" class="message-img" onclick="openPopup(this.src)">
+        
+        <img src="message5.jpg" alt="Message 5" class="message-img" onclick="openPopup(this.src)">
+        <img src="message6.jpg" alt="Message 6" class="message-img" onclick="openPopup(this.src)">
+        <img src="message7.jpg" alt="Message 7" class="message-img" onclick="openPopup(this.src)">
+        <img src="message8.jpg" alt="Message 8" class="message-img" onclick="openPopup(this.src)">
+
+        <img src="message9.jpg" alt="Message 9" class="message-img" onclick="openPopup(this.src)">
+        <img src="message10.jpg" alt="Message 10" class="message-img" onclick="openPopup(this.src)">
+        <img src="message11.jpg" alt="Message 11" class="message-img" onclick="openPopup(this.src)">
+        <img src="message12.jpg" alt="Message 12" class="message-img" onclick="openPopup(this.src)">
+
+        <img src="message13.jpg" alt="Message 13" class="message-img" onclick="openPopup(this.src)">
+        <img src="message14.jpg" alt="Message 14" class="message-img" onclick="openPopup(this.src)">
+        <img src="message15.jpg" alt="Message 15" class="message-img" onclick="openPopup(this.src)">
+        <img src="message16.jpg" alt="Message 16" class="message-img" onclick="openPopup(this.src)">
+    </div>
+
+    <!-- نافذة منبثقة لعرض الصورة -->
+    <div class="popup" id="popup">
+        <button class="close-btn" onclick="closePopup()">×</button>
+        <img id="popup-image" src="" alt="Message Image">
+    </div>
+
+    <!-- الفوتر -->
+    <footer>
+        &copy; 2024 For My Moon - All Rights Reserved
+    </footer>
+
+    <script>
+        // وظيفة لفتح النافذة المنبثقة
+        function openPopup(src) {
+            document.getElementById('popup').style.display = 'flex';
+            document.getElementById('popup-image').src = src;
+        }
+
+        // وظيفة لإغلاق النافذة المنبثقة
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
