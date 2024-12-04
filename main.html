@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Moon</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+    <style>
+        /* إعداد الألوان والخطوط */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* الوضع الداكن */
+        .dark-mode {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .dark-mode header {
+            background-color: #444;
+        }
+
+        .dark-mode .grid div {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* الهيدر */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin: 10px 0 0;
+            color: #ddd;
+        }
+
+        /* الصورة الرئيسية */
+        .hero {
+            position: relative;
+            background: url('your-image.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 20px; /* جعل الجملة تنزل للأسفل قليلاً */
+        }
+
+        /* زر الوضع الداكن */
+        #darkModeToggle {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        #darkModeToggle:hover {
+            background-color: #555;
+            transform: scale(1.1);
+        }
+
+        /* وصف الموقع */
+        .description {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        /* الشبكة */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid div {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .grid div h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .dark-mode .grid div h3 {
+            color: #fff;
+        }
+
+        .grid div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        /* عداد عيد الميلاد */
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- زر الوضع الداكن -->
+    <button id="darkModeToggle">🌙</button>
+
+    <!-- الهيدر -->
+    <header>
+        <h1>For My Moon</h1>
+        <p>"This is the moon that was born from the light, shining since April 16th"</p>
+    </header>
+
+    <!-- الصورة الرئيسية -->
+    <div class="hero">
+        <h2>Your Beautiful Eyes, Always in My Heart</h2>
+    </div>
+
+    <!-- عداد عيد الميلاد -->
+    <div class="countdown" id="countdown"></div>
+
+    <!-- وصف الموقع -->
+    <div class="description" data-aos="fade-up">
+        <p>This website is a small gift to express my endless love and appreciation for you. It is a space where I gather memories, dreams, and promises that matter to both of us.</p>
+    </div>
+
+    <!-- الشبكة -->
+    <div class="grid" data-aos="fade-up">
+        <div onclick="navigateToPage('why-i-love-you.html')">
+            <h3>Why do I love you?</h3>
+        </div>
+        <div onclick="navigateToPage('why-you-are-the-best.html')">
+            <h3>Why are you the best?</h3>
+        </div>
+        <div onclick="navigateToPage('recordings.html')">
+            <h3>Recordings of my voice</h3>
+        </div>
+        <div onclick="navigateToPage('messages.html')">
+            <h3>Messages You Must Always Remember</h3>
+        </div>
+        <div onclick="navigateToPage('plans.html')">
+            <h3>Things I plan for us</h3>
+        </div>
+        <div onclick="navigateToPage('promises.html')">
+            <h3>Promises that matter to you</h3>
+        </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer>
+        &copy; 2024 For My Moon - All Rights Reserved
+    </footer>
+
+    <!-- مكتبة AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // تبديل الوضع الداكن
+        const darkModeToggle = document.getElementById('darkModeToggle');
+
+        // عند فتح الصفحة تحقق من الوضع المحفوظ
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('dark-mode', 'enabled');
+                darkModeToggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('dark-mode', 'disabled');
+                darkModeToggle.textContent = '🌙';
+            }
+        });
+
+        // التنقل بين الصفحات
+        function navigateToPage(url) {
+            localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+            window.location.href = url;
+        }
+
+        // إعدادات العداد
+        const birthday = new Date("April 16, 2025 00:00:00").getTime();
+        const countdownElement = document.getElementById("countdown");
+
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = birthday - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+         if (distance < 0) {
+                    clearInterval(x);
+                    countdownElement.innerHTML = "It's your birthday! 🎉";
+                }
+            }, 1000);
+        </script>
+    </body>
+</html>
