@@ -52,6 +52,7 @@
             padding: 20px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
         }
 
         .plan-card:hover {
@@ -68,6 +69,21 @@
             font-size: 14px;
             line-height: 1.6;
             color: #555;
+        }
+
+        .checkbox-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            transform: scale(1.5);
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
         }
 
         footer {
@@ -89,79 +105,123 @@
     <!-- النص التقديمي فوق الخانات -->
     <div class="container">
         <div class="intro-text">
-            <p>ف الجزء دا انا هتكلم علي شوية حاجات مخطط اننا نعملهم سوا يوما ما او نفسي اعملهم معاكي</p>
+            <p>في الجزء دا أنا هتكلم عن شوية حاجات مخطط إننا نعملهم سوا يوما ما أو نفسي أعملهم معاكي</p>
         </div>
         
         <!-- الشبكة الخاصة بالنقاط -->
         <div class="plans-grid">
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-1">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>ركوب اتنين ام فور</h3>
                 <p>واحدة بينك ليكي والتانية سودة ليا عشاني اسود</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-2">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>دخول الكليات</h3>
-                <p>ندخل الكليات ال انا احنا عايزينها وتكون ف القاهرة أو في مكان انا وانتي فيه</p>
+                <p>ندخل الكليات ال أنا احنا عايزينها وتكون ف القاهرة أو في مكان أنا وانتي فيه</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-3">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>التنايك سويا</h3>
                 <p>نتنايك يوما ما بعد الزواج</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-4">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>المشي في الشارع</h3>
                 <p>نمشي سوا فشارع فاضي بليل</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-5">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>السفر معًا</h3>
                 <p>عايز أسافر معاكي أي مكان عموما، بس أنا كـ خالد عايز أسافر أمريكا</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-6">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>مشاهدة فيلم سوا</h3>
                 <p>عايز نسمع فيلم سوا سينما مثلا أو في بيت</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-7">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>قبلة في كل جزء</h3>
                 <p>عايز أبوس كل جزء في جسمك حرفيا كل سنتي</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-8">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>الاحتضان</h3>
                 <p>عايز أحضنك أويييييي بجدددد</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-9">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>الاستحمام سوا</h3>
                 <p>عايز نستحمي سوا</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-10">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>قبلة طويلة</h3>
                 <p>عايز نتباوس بوسة طويلة أويييي</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-11">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>نزع الملابس</h3>
                 <p>عايز نقلع لبعض</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-12">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>التحدث بدلاً من الشات</h3>
                 <p>عايز كلامنا بدل الشات يبقى ريل</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-13">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>العيش في بيت واحد</h3>
                 <p>عايز نعيش في بيت واحد</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-14">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>الزواج</h3>
                 <p>عايز أتجوزك</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
-                <h3> اذاكرلك</h3>
+            <div class="plan-card" data-aos="fade-up" id="plan-15">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
+                <h3>اذاكرلك</h3>
                 <p>عايز إذاكرلك أنا يوما ما</p>
             </div>
-            <div class="plan-card" data-aos="fade-up">
+            <div class="plan-card" data-aos="fade-up" id="plan-16">
+                <div class="checkbox-container">
+                    <input type="checkbox" onchange="toggleComplete(this)">
+                </div>
                 <h3>مشروع معًا</h3>
                 <p>عايز أبقى مهندس وأشتغل أنا وأنتي على مشروع يجمع تخصصي وتخصصك</p>
-            </div>
-            <div class="plan-card" data-aos="fade-up">
-                <h3>زيارة الملاهي</h3>
-                <p>عايز نخرج سوا لملاهي بليل</p>
-            </div>
+                            </div>
         </div>
     </div>
 
@@ -174,6 +234,36 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+
+        // عند تحميل الصفحة
+        window.onload = function() {
+            const checkboxes = document.querySelectorAll('.checkbox-container input[type="checkbox"]');
+            checkboxes.forEach((checkbox, index) => {
+                const id = `plan-${index + 1}`;
+                const isChecked = localStorage.getItem(id) === 'true';
+                checkbox.checked = isChecked;
+
+                // أضف أو أزل الكلاس "completed"
+                if (isChecked) {
+                    checkbox.closest('.plan-card').classList.add('completed');
+                }
+            });
+        };
+
+        function toggleComplete(checkbox) {
+            const card = checkbox.closest('.plan-card');
+            const id = card.id;
+
+            // حفظ الحالة في localStorage
+            localStorage.setItem(id, checkbox.checked);
+
+            // إضافة أو إزالة الكلاس "completed"
+            if (checkbox.checked) {
+                card.classList.add('completed');
+            } else {
+                card.classList.remove('completed');
+            }
+        }
     </script>
 </body>
-</html>
+</html
